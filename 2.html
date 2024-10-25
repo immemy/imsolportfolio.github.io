@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="2.css">
+
+<body>
+    <header>
+        <h1>My Proflie</h1>
+    </header>
+
+    <div class="main">
+        <div class="nav">
+            <ul>
+                <li><a href="proflie.html">Home</a></li>
+                <li><a href="potofolio.html">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="conts">
+            <div class="conts1" id="ux-ui-1">
+                <h3>UX/UI</h3>
+                <ul>
+                    <li>
+                        <a href="#" data-modal="images/uiux_티켓1.png">
+                            <img src="images/uiux_티켓1.png" alt="Project 1">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-modal="images/uiux_티켓2.png">
+                            <img src="images/uiux_티켓2.png" alt="Project 1">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="conts1" id="ux-ui-1">
+                <h3>UX/UI</h3>
+                <ul>
+                    <li>
+                        <a href="#" data-modal="images/부동산 앱1.png">
+                            <img src="images/부동산 앱 폰x.png" alt="Project 1">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-modal="images/부동산 앱1.png">
+                            <img src="images/부동산 앱 폰x 1.png" alt="Project 1">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="modal" id="image-modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img">
+        </div>
+        <div class="pagination">
+            <a href="potofolio.html">1</a>
+            <a href="2.html">2</a>
+            <a href="3.html">3</a>
+        </div>
+
+    </div>
+    <script>
+        document.querySelectorAll('.conts1 a').forEach(image => {
+            image.addEventListener('click', function (event) {
+                event.preventDefault(); // 링크 기본 동작 방지
+                const modal = document.getElementById('image-modal');
+                const modalImg = document.getElementById('modal-img');
+                modal.style.display = "flex";
+                modalImg.src = this.dataset.modal; // 클릭한 이미지 소스 가져오기
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('image-modal').style.display = "none"; // 모달 닫기
+        });
+
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('image-modal');
+            if (event.target === modal) {
+                modal.style.display = "none"; // 모달 외부 클릭 시 닫기
+            }
+        });
+    </script>
+</body>
+
+</html>
