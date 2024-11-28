@@ -49,6 +49,29 @@ header h1{
 .nav>ul>li>a:hover {
     color: #ffae78;
 }
+@media (max-width: 768px) {
+
+    /* 네비게이션 항목 세로로 정렬 */
+    .nav>ul {
+        flex-direction: column;
+        margin-right: 100px;
+        margin-left: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .nav>ul>li {
+        margin-right: 0;
+        /* 항목 사이의 오른쪽 마진 제거 */
+        margin-bottom: 10px;
+        /* 항목 간의 간격을 줄임 */
+    }
+
+    .nav>ul>li>a {
+        font-size: 16px;
+        /* 모바일 화면에서 폰트 크기 줄이기 */
+    }
+}
 
 .conts {
     display: flex;
